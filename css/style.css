@@ -665,3 +665,32 @@ a {
 html {
 scroll-behavior: smooth;
 }
+/* ON SCROLL TRIGGERED ANIMATION */
+.observe-me {
+    opacity: 0;
+    transition: all 1s ease-out .5s;
+  }
+  .observe-me[data-viewstate="active"] {
+    opacity: 1;
+  }
+  
+  .animate-from-left {
+    translate: -20px 0;
+  }
+  .animate-from-left[data-viewstate="active"] {
+    translate: 0 0;
+  }
+  
+  .animate-from-right {
+    translate: 20px 0;
+  }
+  .animate-from-right[data-viewstate="active"] {
+    translate: 0 0;
+  }
+  
+  .zoomup {
+    scale: 0;
+  }
+  .zoomup[data-viewstate="active"] {
+    scale: 1;
+  }
