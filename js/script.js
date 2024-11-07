@@ -19,8 +19,7 @@ toggleMenuLinks.forEach((el) => {
   }
 });
 
-// ON SCROLL ANIMATIO
-N//
+// ON SCROLL ANIMATION//
 
 // CHANGE ACTIVE STATE FOR ALL TARGET ELEMENTS WITH INTERSECTION OBSERVER
 const myobserver = new IntersectionObserver((entries) => {
