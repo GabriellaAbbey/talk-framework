@@ -1,4 +1,3 @@
-
 // TOGGLE MENU
 const toggleMenu = document.querySelector('.toggle-menu');
 const toggleMenuButton = document.querySelector('.site-menu-button');
@@ -36,3 +35,4 @@ const mytargets = document.querySelectorAll('.observe-me');
 mytargets.forEach((el) => {
     myobserver.observe(el);
 });
+

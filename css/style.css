@@ -140,7 +140,12 @@ CSS TABLE OF CONTENTS
     /* TYPOGRAPHIC SCALE */
 
         .hero h1 {
-            font-size: 4em;
+            font-size: 3em;
+            margin:0;
+        }
+
+        .hero p {
+            font-size: 3.5em;
         }
         h1 {
 
@@ -188,6 +193,53 @@ CSS TABLE OF CONTENTS
             position: absolute;
             top: -9999px;
             left: -9999px;
+}
+
+
+
+.bottomleft {
+    position: fixed;
+    bottom: 8px;
+    left: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+.topleft {
+    position: fixed;
+    top: 8px;
+    left: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+.topright {
+    position: fixed;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+.bottomright {
+    position: fixed;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+    padding: 16px;
+}
+
+.rightaligned {
+    text-align: right;
+
+}
+
+.stacked-title {
+    display: block;
+    font-size: 3em; /* Adjust font size as needed */
+  
+}
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -565,6 +617,13 @@ h1, h2, h3 {
 }
 
 
+/* LIGHTS */
+
+.lights {
+    scale: 1.1;
+ }
+ 
+
 /* SITE FOOTER */
 .site-footer {
 background-color: var(--color-sitefooter-background);
@@ -594,6 +653,29 @@ a {
 /* --------------------------
 ------ UI COMPONENTS ---------
 ---------------------------- */
+
+
+
+/* TOGGLE BETWEEN DAY + NIGHT CONTENT */
+
+.day-content {
+    display: block; /* Default state */
+}
+
+.night-content {
+    display: none; /* Default state */
+}
+
+/* ALLOWS DAY AND NIGHT CONTENT TO BE TOGGLED*/
+body:has(input[type="checkbox"]:checked) {
+  
+  .day-content {
+    display: none;
+  }
+  .night-content {
+    display: block;
+  }
+}
 
 
 /* BUTTONS */
@@ -649,6 +731,58 @@ a {
         border-radius: 10px;
         padding:var(--unit-small);
     }
+}
+
+
+
+/* ----------------------------
+---TOGGLE SWITCH DAY TO NIGHT--
+---------------------------- */
+
+.switcher {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  
+}
+
+.switcher input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+    border-radius: 34px;
+    background-color: blue;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input[type="checkbox"]:checked + .slider {
+    background-color: orange; /* Blue for light theme */
+}
+
+input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(26px);
 }
 
 
